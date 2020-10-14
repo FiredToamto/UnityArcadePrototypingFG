@@ -10,7 +10,6 @@ public class DeflectBullet : MonoBehaviour
         Rigidbody2D rbBullet = coll.GetComponent<Rigidbody2D>();
         if (bullet != null)
         {
-            rbBullet.velocity =  new Vector2(0, 0);
             bullet.Interact(shieldType);
         }
     }
