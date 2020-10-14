@@ -6,7 +6,7 @@ public class DeflectBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D coll)
     {
-        BulletMovement bullet = coll.GetComponent<BulletMovement>();
+        IInteraction bullet = coll.GetComponent<BulletMovement>();
         Rigidbody2D rbBullet = coll.GetComponent<Rigidbody2D>();
         if (bullet != null)
         {
