@@ -3,8 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Exit
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -14,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - BlockingLayer
+  - 
   - 
   - 
   - 
@@ -41,13 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Background
-    uniqueID: 655464817
-    locked: 0
-  - name: Player
-    uniqueID: 3217475599
-    locked: 0
-  - name: Interactables
-    uniqueID: 208484089
     locked: 0
