@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2fedd7d03acd67d4abf4c645f9ef4828, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7411bb6a450549f419328a0d5d0f47ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,7 +93,7 @@ Animator:
   m_GameObject: {fileID: 1938029977170268561}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9d6531837b8913f4b8539eb81f36da15, type: 2}
+  m_Controller: {fileID: 9100000, guid: db8df2713598f3a4c974d7dd143eeaff, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 1938029978002293764}
   - component: {fileID: 1938029978002293770}
   - component: {fileID: 1938029978002293769}
-  - component: {fileID: 1938029978002293767}
+  - component: {fileID: 8344629765677583081}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Untagged
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1938029978002293763}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cacc276f140096419d815666aab93db, type: 3}
+  m_Script: {fileID: 11500000, guid: fc2705b3ce03f6c49b10e8a97255d3f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 30
@@ -236,7 +236,7 @@ MonoBehaviour:
   linearDrag: 4
   gravity: 1
   fallMultiplier: 5
-  onGround: 0
+  onGround: 1
   groundLength: 0.4
   colliderOffset: {x: 0.3, y: 0, z: 0}
   ghost: {fileID: 0}
@@ -268,7 +268,7 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!114 &1938029978002293767
+--- !u!114 &8344629765677583081
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -277,12 +277,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1938029978002293763}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91b13a6bc8dd4c1428980fedd37ac559, type: 3}
+  m_Script: {fileID: 11500000, guid: 79b593c406d43db448c148a00358692a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ghostDelay: 0.03
   ghost: {fileID: 0}
-  makeGhost: 0
+  makeGhost: 1
 --- !u!1 &1938029978998743860
 GameObject:
   m_ObjectHideFlags: 0
