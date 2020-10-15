@@ -18,6 +18,9 @@ TagManager:
   - BlockingLayer
   - Bakground
   - Units
+  - Ground
+  - 
+  - 
   - 
   - 
   - 
@@ -54,4 +57,10 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3894120913
+    locked: 0
+  - name: Player
+    uniqueID: 1863166611
+    locked: 0
+  - name: Ghost
+    uniqueID: 2840761423
     locked: 0
