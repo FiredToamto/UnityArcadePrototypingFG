@@ -1,40 +1,40 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
-
-public class GameManager : MonoBehaviour
+namespace RogueLikeTEST
 {
+    public class GameManager : MonoBehaviour
+    {
 
-    public static GameManager
-        instance = null;
+        public static GameManager
+            instance = null;
 
-    private BoardManager _boardScript;
-    private int level = 3;
+        private BoardManager _boardScript;
+        private int level = 3;
     
-    void start()
-    {
-        if (instance == null)
-            instance = this;
+        void Start()
+        {
+            if (instance == null)
+                instance = this;
 
-        else if (instance != this)
-            Destroy(gameObject);
+            else if (instance != this)
+                Destroy(gameObject);
 
-        DontDestroyOnLoad(gameObject);
-        _boardScript = GetComponent<BoardManager>();
+            DontDestroyOnLoad(gameObject);
+            _boardScript = GetComponent<BoardManager>();
 
-        InitGame();
-    }
+            InitGame();
+        }
 
-    void InitGame()
-    {
-        _boardScript.SetupScene(level);
+        void InitGame()
+        {
+            _boardScript.SetupScene(level);
 
-    }
+        }
     
-    void Update()
-    {
+        void Update()
+        {
+
+        }
 
     }
-
 }    

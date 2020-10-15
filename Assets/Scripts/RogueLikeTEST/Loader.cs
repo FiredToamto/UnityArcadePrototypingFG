@@ -1,27 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Loader : MonoBehaviour
+namespace RogueLikeTEST
 {
-
-    public GameObject gameManager;
-    public GameObject soundManager;
-    
-    
-    void Start()
+    public class Loader : MonoBehaviour
     {
-        if (GameManager.instance == null)
-            Instantiate(gameManager);
+
+        public GameObject gameManager;
+        // public GameObject soundManager;
+    
+    
+        void Start()
+        {
+            if (GameManager.instance == null)
+                Instantiate(gameManager);
         
-        /*if (soundManager.instance == null)
+            /*if (soundManager.instance == null)
             (Instantiate(soundManager))
             */
-    }
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
+        // Update is called once per frame
+        void Update()
+        {
         
+        }
     }
 }
