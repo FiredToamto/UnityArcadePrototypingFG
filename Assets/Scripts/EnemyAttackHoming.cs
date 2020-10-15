@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAttack : MonoBehaviour
+public class EnemyAttackHoming : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public float shootIntervall = 10f;
