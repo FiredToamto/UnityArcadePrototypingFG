@@ -21,6 +21,7 @@ public class CharacterController : MonoBehaviour
     private float jumpTimer;
 
     [Header("Components")]
+    public Transform character;
     public Rigidbody2D rb;
     public Animator animator;
     public LayerMask groundLayer;
@@ -75,6 +76,7 @@ public class CharacterController : MonoBehaviour
 
         if ((Horizontal > 0 && !facingRight) || (Horizontal < 0 && facingRight))
         {
+            Debug.Log("wtf");
             Flip();
         }
         if (Mathf.Abs(rb.velocity.x) > maxSpeed)
@@ -115,10 +117,10 @@ public class CharacterController : MonoBehaviour
           }
         }
     
-        void Flip()
+    void Flip()
     {
         facingRight = !facingRight;
-        transform.rotation = Quaternion.Euler(0, facingRight ? 0 : 180, 0);
+        character.rotation = Quaternion.Euler(0, facingRight ? 0 : 180, 0);
     }
     private void OnDrawGizmos(){
         Gizmos.color = Color.red;
