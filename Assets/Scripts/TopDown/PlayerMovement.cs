@@ -45,9 +45,7 @@ namespace TopDown
         { 
             //Rigidbody movement calculation
             rb.MovePosition(rb.position + _movement * moveSpeed * Time.fixedDeltaTime);
-            
            
-            
             //MOUSE AIMING
             //calculate mouse direction from player to mouse.
             Vector2 lookDir = _mousePosition - rb.position;
