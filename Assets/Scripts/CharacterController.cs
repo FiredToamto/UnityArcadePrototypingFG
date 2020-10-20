@@ -76,7 +76,6 @@ public class CharacterController : MonoBehaviour
 
         if ((Horizontal > 0 && !facingRight) || (Horizontal < 0 && facingRight))
         {
-            Debug.Log("wtf");
             Flip();
         }
         if (Mathf.Abs(rb.velocity.x) > maxSpeed)

@@ -11,6 +11,11 @@ public class GhostTrail : MonoBehaviour
     public GameObject ghost;
     public bool makeGhost = true;
 
+    private void Awake()
+    {
+        Instantiate(ghost, transform.position, transform.rotation);
+    }
+
     void Start()
     {
         ghostDelaySeconds = ghostDelay;
