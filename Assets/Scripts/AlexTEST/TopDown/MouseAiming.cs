@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TopDown
+namespace AlexTEST.TopDown
 {
     public class MouseAiming : MonoBehaviour
     {

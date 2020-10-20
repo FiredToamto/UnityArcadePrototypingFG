@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace TopDown
+namespace AlexTEST.TopDown
 {
     public class GameController : MonoBehaviour
     {
