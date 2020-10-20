@@ -9,7 +9,7 @@ namespace TopDown
         public float xMin, xMax, yMin, yMax;
     }
 
-    public class PlayerMovement : MonoBehaviour
+    public class PlayerController : MonoBehaviour
     {
         public float moveSpeed = 5f;
         public Rigidbody2D rb;
@@ -28,6 +28,8 @@ namespace TopDown
             
             //Calculate where mouse is from pixels to world pos.
             _mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
+            
+            
             
             //Create a clamped boundary where the player can or cannot move
             rb.position = new Vector3
