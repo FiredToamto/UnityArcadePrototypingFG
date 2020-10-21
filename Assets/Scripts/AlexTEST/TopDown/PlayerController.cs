@@ -19,7 +19,8 @@ namespace AlexTEST.TopDown
         public Transform firePoint;
         public GameObject bulletPrefab;
         public float bulletForce;
-
+        public ParticleSystem PS;
+        
         private Vector2 _movement;
         private Vector2 _mousePosition;
         

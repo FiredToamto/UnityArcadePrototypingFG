@@ -449,6 +449,7 @@ MonoBehaviour:
   groundLength: 0.4
   colliderOffset: {x: 0.3, y: 0, z: 0}
   ghost: {fileID: 0}
+  PS: {fileID: 3041655832367085875, guid: 68840a372ce92cc4fa9c15f8d3db4262, type: 3}
 --- !u!114 &8344629765677583081
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -40,6 +40,9 @@ public class CharacterController : MonoBehaviour
     [Header("Ghost Trail")]
     public GhostTrail ghost;
 
+    [Header("ParticleSystem")] 
+    public ParticleSystem PS;
+
 
     void Update() 
     {
@@ -60,6 +63,10 @@ public class CharacterController : MonoBehaviour
         moveCharacter(direction.x);
         if(jumpTimer > Time.time && onGround){
            Jump();
+           Debug.Log("Jump");
+           ParticleSystem PS01 = Instantiate(PS, transform);
+           PS01.Play();
+           
         }
 
         animator.SetBool("IsGrounded", false);
