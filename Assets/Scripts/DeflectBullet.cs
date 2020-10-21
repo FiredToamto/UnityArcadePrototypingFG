@@ -3,7 +3,6 @@
 public class DeflectBullet : MonoBehaviour
 {
     public int shieldType = 1;
-
     private void OnTriggerEnter2D(Collider2D coll)
     {
         IInteraction bullet = coll.GetComponent<BulletMovement>();
