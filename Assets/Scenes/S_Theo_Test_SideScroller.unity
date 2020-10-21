@@ -235,7 +235,7 @@ Transform:
   m_LocalScale: {x: 36.11748, y: 4.9056, z: 4.9056}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1001 &486592026
 PrefabInstance:
@@ -278,7 +278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6995905058654067838, guid: feae3bea6898641409f4939828614b26, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6995905058654067838, guid: feae3bea6898641409f4939828614b26, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -448,6 +448,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1938029978002293770, guid: 5f1ddf3855f114946a0ab2b1e0762e30, type: 3}
+      propertyPath: fallMultiplier
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938029978002293770, guid: 5f1ddf3855f114946a0ab2b1e0762e30, type: 3}
+      propertyPath: jumpSpeed
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f1ddf3855f114946a0ab2b1e0762e30, type: 3}
 --- !u!1 &957868851
@@ -557,7 +565,7 @@ Transform:
   m_LocalScale: {x: 36.11748, y: 4.9056, z: 4.9056}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1001 &1338935299
 PrefabInstance:
@@ -600,7 +608,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6995905058654067838, guid: 06a5efd608491014883e580077bbf266, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6995905058654067838, guid: 06a5efd608491014883e580077bbf266, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -780,5 +788,5 @@ Transform:
   m_LocalScale: {x: 36.11748, y: 4.9056, z: 4.9056}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
