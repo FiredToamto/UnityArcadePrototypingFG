@@ -41,19 +41,26 @@ public class CharacterController : MonoBehaviour
     public GhostTrail ghost;
 
     [Header("ParticleSystem")] 
-    public ParticleSystem PS;
+    public ParticleSystem JumpParticle;
 
     [Header("Respawn Position")] 
     public Vector3 respawnPosition;
 
     public LevelManager theLevelManager;
 
+    public bool canMove;
+
+    public AudioSource jumpSound;
+    public AudioSource turnSound;
+
+
     void Update() 
     {
         onGround = Physics2D.Raycast(transform.position + colliderOffset, Vector2.down, groundLength, groundLayer) || Physics2D.Raycast(transform.position - colliderOffset, Vector2.down, groundLength, groundLayer);
 
         //Jumps when the assigned button is pressed
-        if(Input.GetButtonDown("Jump")){
+        if(Input.GetButtonDown("Jump"))
+        {
            //Declaring the jump function
             jumpTimer = Time.time + jumpDelay;
 
@@ -67,11 +74,13 @@ public class CharacterController : MonoBehaviour
         respawnPosition = transform.position;
 
         theLevelManager = FindObjectOfType<LevelManager>();
+
+        canMove = true;
     }
 
 
     private void OnTriggerEnter2D(Collider2D other)
-    {        //Killbox on spikes
+    {        
         if (other.tag == "Killbox")
         {
             Debug.Log("DIED!!!");
@@ -91,9 +100,8 @@ public class CharacterController : MonoBehaviour
         moveCharacter(direction.x);
         if(jumpTimer > Time.time && onGround){
            Jump();
-           Debug.Log("Jump");
-           ParticleSystem PS01 = Instantiate(PS, transform);
-           PS01.Play();
+           ParticleSystem ps01 = Instantiate(JumpParticle, transform);
+           ps01.Play();
            
         }
 
@@ -103,23 +111,28 @@ public class CharacterController : MonoBehaviour
         modifyPhysics();
     }
     void moveCharacter(float Horizontal)
-    {
-
-        animator.SetFloat("Horizontal", Mathf.Abs(rb.velocity.x));
-        animator.SetFloat("Vertical", Mathf.Abs(rb.velocity.y));
-        rb.AddForce(Vector2.right * Horizontal * moveSpeed);
-
-        if ((Horizontal > 0 && !facingRight) || (Horizontal < 0 && facingRight))
+    {        //TESTING STUFF
+        if (canMove == true)
         {
-            Flip();
+            animator.SetFloat("Horizontal", Mathf.Abs(rb.velocity.x));
+            animator.SetFloat("Vertical", Mathf.Abs(rb.velocity.y));
+            rb.AddForce(Vector2.right * Horizontal * moveSpeed);
+
+            if ((Horizontal > 0 && !facingRight) || (Horizontal < 0 && facingRight))
+            {
+                Flip();
+            }
+            if (Mathf.Abs(rb.velocity.x) > maxSpeed)
+            {
+                rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);
+            } 
         }
-        if (Mathf.Abs(rb.velocity.x) > maxSpeed)
-        {
-            rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);
-        }
+
+        
     }
     void Jump()
     {
+        jumpSound.Play();
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
         jumpTimer = 0; //Sets jump delay
@@ -153,10 +166,12 @@ public class CharacterController : MonoBehaviour
     
     void Flip()
     {
+        turnSound.Play();
         facingRight = !facingRight;
         character.rotation = Quaternion.Euler(0, facingRight ? 0 : 180, 0);
     }
-    private void OnDrawGizmos(){
+    private void OnDrawGizmos()
+    {
         Gizmos.color = Color.red;
         //Sets editor linetrace for ground collision; their collider offset should be adjusted in the inspector variable to be just inside of the CharacterController's boundary box on the X axis (not Y axis)
         Gizmos.DrawLine(transform.position + colliderOffset, transform.position + colliderOffset + Vector3.down * groundLength);

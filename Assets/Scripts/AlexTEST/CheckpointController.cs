@@ -12,9 +12,12 @@ public class CheckpointController : MonoBehaviour
 
     public bool checkpointActive;
 
+    public AudioSource checkPointSound;
+
     void Start()
     {
         theSpriteRenderer = GetComponent<SpriteRenderer>();
+        
     }
         
     void Update()
@@ -27,6 +30,7 @@ public class CheckpointController : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            checkPointSound.Play();
             theSpriteRenderer.sprite = flagOpen;
             checkpointActive = true;
         }
