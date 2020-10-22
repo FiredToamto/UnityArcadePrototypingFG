@@ -40,6 +40,13 @@ public class CharacterController : MonoBehaviour
     [Header("Ghost Trail")]
     public GhostTrail ghost;
 
+    [Header("ParticleSystem")] 
+    public ParticleSystem PS;
+
+    [Header("Respawn Position")] 
+    public Vector3 respawnPosition;
+
+    public LevelManager theLevelManager;
 
     void Update() 
     {
@@ -51,15 +58,43 @@ public class CharacterController : MonoBehaviour
             jumpTimer = Time.time + jumpDelay;
 
         }
-
-
+        
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
     }
+
+    private void Start()
+    {
+        respawnPosition = transform.position;
+
+        theLevelManager = FindObjectOfType<LevelManager>();
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {        //Killbox on spikes
+        if (other.tag == "Killbox")
+        {
+            Debug.Log("DIED!!!");
+            theLevelManager.Respawn();
+        }
+
+        if (other.tag == "CheckPoint")
+        {    //Get Checkpoint position
+
+            Debug.Log("Checkpoint!!!");
+            respawnPosition = other.transform.position;
+        }
+    }
+
     void FixedUpdate()
     {   //Checks if the player is grounded to allow jumping and their jump delay
         moveCharacter(direction.x);
         if(jumpTimer > Time.time && onGround){
            Jump();
+           Debug.Log("Jump");
+           ParticleSystem PS01 = Instantiate(PS, transform);
+           PS01.Play();
+           
         }
 
         animator.SetBool("IsGrounded", false);

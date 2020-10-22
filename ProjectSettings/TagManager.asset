@@ -8,6 +8,8 @@ TagManager:
   - Exit
   - Boundary
   - Bullet
+  - Killbox
+  - CheckPoint
   layers:
   - Default
   - TransparentFX

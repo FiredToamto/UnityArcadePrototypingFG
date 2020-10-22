@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace TopDown
+namespace AlexTEST.TopDown
 {
     [Serializable]
     public class Boundary
@@ -16,7 +16,11 @@ namespace TopDown
         public Boundary boundary;
         public float tilt;
         public Camera cam;
-
+        public Transform firePoint;
+        public GameObject bulletPrefab;
+        public float bulletForce;
+        public ParticleSystem PS;
+        
         private Vector2 _movement;
         private Vector2 _mousePosition;
         
@@ -29,8 +33,6 @@ namespace TopDown
             //Calculate where mouse is from pixels to world pos.
             _mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
             
-            
-            
             //Create a clamped boundary where the player can or cannot move
             rb.position = new Vector3
                 
@@ -40,6 +42,11 @@ namespace TopDown
                 0.0f
                 
             );
+            
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Shoot();
+            }
             
         }
 
@@ -92,6 +99,13 @@ namespace TopDown
                  transform.rotation = characterRotation * target;
              }
             */
+        }
+        
+        void Shoot()
+        {    // instantiate spawn bullet, get rigidbody of bullet, Add force from firePoint vector + force
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
         }
     }
 }

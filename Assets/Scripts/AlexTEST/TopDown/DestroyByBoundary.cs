@@ -1,13 +1,15 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace TopDown
+namespace AlexTEST.TopDown
 {
     public class DestroyByBoundary : MonoBehaviour
     {
-        private void OnTriggerExit(Collider other)
+        void OnTriggerExit(Collider other)
         {
+            Debug.Log(other.name);
             Destroy(other.gameObject);
         }
     }
+    
+    
 }

@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 
-namespace TopDown
+namespace AlexTEST.TopDown
 {
-    public class DestroyByContact : MonoBehaviour
+    public class DestroyOnContact : MonoBehaviour
     {
         public GameObject explosion;
         private void OnTriggerEnter(Collider other)
         {
             Debug.Log(other.name);
 
-            if (other.tag == "Boundary")
+            if (other.CompareTag("Boundary"))
             {
                 return;
             }
