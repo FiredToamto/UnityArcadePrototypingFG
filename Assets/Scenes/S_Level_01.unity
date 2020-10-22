@@ -10451,6 +10451,10 @@ PrefabInstance:
       propertyPath: heartEmpty
       value: 
       objectReference: {fileID: 21300000, guid: cbb6e4ddd7f7b5846914b590933c9ad3, type: 3}
+    - target: {fileID: 3488213378248809366, guid: 7a89ba40721ff674fb9d945b662ba16e, type: 3}
+      propertyPath: deathSplotion
+      value: 
+      objectReference: {fileID: 2893702589701436126, guid: 152cfc3d8c168d342840b180829d58bb, type: 3}
     - target: {fileID: 3488213378248809367, guid: 7a89ba40721ff674fb9d945b662ba16e, type: 3}
       propertyPath: m_Name
       value: LevelManager
