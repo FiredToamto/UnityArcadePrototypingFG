@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2344813259219220633}
   - component: {fileID: 2344813259219220634}
   - component: {fileID: 2913012702383251209}
-  - component: {fileID: 6274061711245812303}
+  - component: {fileID: 1086047101855599629}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -149,7 +149,7 @@ MonoBehaviour:
   bulletSpeed: 10
   bulletType: 1
   deflected: 0
---- !u!114 &6274061711245812303
+--- !u!114 &1086047101855599629
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,6 +158,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2344813259219220637}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e16e9d06779ecb74bb21c2e0a4013b8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 24620e5073ccb7741b0de40ed56d2b04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

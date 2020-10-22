@@ -4,32 +4,32 @@ using System.Collections.Generic;
 
 public class ShieldControll : MonoBehaviour
 {
-    public GameObject shieldOne;
+    public GameObject shield;
     public KeyCode shieldButton;
 
     private bool _state = false;
 
     private void Update()
     {
-        shieldInput();
+        ShieldInput();
     }
 
-    private void shieldInput()
+    private void ShieldInput()
     {
         if (Input.GetKeyDown(shieldButton))
         {
             _state = !_state;
-            shieldToggle();
+            ShieldToggle();
         }
         if (Input.GetKeyUp(shieldButton))
         {
             _state = !_state;
-            shieldToggle();
+            ShieldToggle();
         }
     }
 
-    private void shieldToggle()
+    private void ShieldToggle()
     {
-        shieldOne.SetActive(_state);
+        shield.SetActive(_state);
     }
 }

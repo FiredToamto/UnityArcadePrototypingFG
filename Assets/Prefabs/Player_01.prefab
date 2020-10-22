@@ -114,6 +114,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pushForce: 1000
   playerBody: {fileID: 1938029978002293764}
+--- !u!1 &1784800983538711233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5502758407552899855}
+  - component: {fileID: 1381947481270031894}
+  m_Layer: 0
+  m_Name: SuckedUpBulletManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5502758407552899855
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784800983538711233}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1938029977170268562}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1381947481270031894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784800983538711233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25910f54f6d4dfb478dcde644a0c40d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 2344813259219220637, guid: a1e4e8fae69802d43be8854a7f5cd157, type: 3}
+  _amountOfBullets: 0
 --- !u!1 &1801996338515905977
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,7 +170,7 @@ GameObject:
   - component: {fileID: 2040841322356263358}
   - component: {fileID: 4268303162938358663}
   - component: {fileID: 3816231398213182245}
-  - component: {fileID: 2031070865021288945}
+  - component: {fileID: 7312897588425503695}
   m_Layer: 0
   m_Name: Shield3
   m_TagString: Untagged
@@ -214,7 +259,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.08
---- !u!114 &2031070865021288945
+--- !u!114 &7312897588425503695
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,10 +268,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1801996338515905977}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30f6b18177f56bb428df14c722b9f31a, type: 3}
+  m_Script: {fileID: 11500000, guid: f7b0f56505000aa4daa2a738c18ea66b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldType: 3
+  bulletManager: {fileID: 1381947481270031894}
 --- !u!1 &1938029977170268561
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,6 +304,7 @@ Transform:
   - {fileID: 2299399447217058967}
   - {fileID: 1875452005216304821}
   - {fileID: 2040841322356263358}
+  - {fileID: 5502758407552899855}
   m_Father: {fileID: 6667885991317393977}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -350,7 +396,7 @@ GameObject:
   - component: {fileID: 20471032515053401}
   - component: {fileID: 2672102818989223898}
   m_Layer: 0
-  m_Name: PlayerController
+  m_Name: Player_01
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -451,6 +497,8 @@ MonoBehaviour:
   colliderOffset: {x: 0.3, y: 0, z: 0}
   ghost: {fileID: 0}
   PS: {fileID: 3041655832367085875, guid: 68840a372ce92cc4fa9c15f8d3db4262, type: 3}
+  respawnPosition: {x: 0, y: 0, z: 0}
+  theLevelManager: {fileID: 0}
 --- !u!114 &8344629765677583081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,7 +526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73d9aa970de46ad42bcb8921b2fe9a67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldOne: {fileID: 8995017713119743048}
+  shield: {fileID: 8995017713119743048}
   shieldButton: 122
 --- !u!114 &4720512507472845684
 MonoBehaviour:
@@ -492,7 +540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73d9aa970de46ad42bcb8921b2fe9a67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldOne: {fileID: 1124852242896781473}
+  shield: {fileID: 1124852242896781473}
   shieldButton: 120
 --- !u!114 &20471032515053401
 MonoBehaviour:
@@ -506,7 +554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73d9aa970de46ad42bcb8921b2fe9a67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldOne: {fileID: 1801996338515905977}
+  shield: {fileID: 1801996338515905977}
   shieldButton: 99
 --- !u!114 &2672102818989223898
 MonoBehaviour:
