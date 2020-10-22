@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bulletMethods : MonoBehaviour
+public class BulletMethods : MonoBehaviour
 {
     public void bulletExplode()
     {
@@ -16,7 +16,7 @@ public class bulletMethods : MonoBehaviour
     }
     public void disableVelocity()
     {
-
+        GetComponent<Rigidbody2D>().velocity.Set(0f, 0f);
     }
     public void disableHitDetection()
     {

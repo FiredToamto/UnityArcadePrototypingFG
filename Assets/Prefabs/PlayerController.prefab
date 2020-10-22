@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1875452005216304821}
   - component: {fileID: 7601781963648360173}
   - component: {fileID: 3322949101404499066}
-  - component: {fileID: 407679948698793134}
+  - component: {fileID: 4066285337973418297}
   m_Layer: 0
   m_Name: Shield2
   m_TagString: Untagged
@@ -100,7 +100,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.08
---- !u!114 &407679948698793134
+--- !u!114 &4066285337973418297
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,10 +109,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1124852242896781473}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30f6b18177f56bb428df14c722b9f31a, type: 3}
+  m_Script: {fileID: 11500000, guid: e75d8a62d25ca0d4bbaae770d21db936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldType: 2
+  pushForce: 1000
+  playerBody: {fileID: 1938029978002293764}
 --- !u!1 &1801996338515905977
 GameObject:
   m_ObjectHideFlags: 0
