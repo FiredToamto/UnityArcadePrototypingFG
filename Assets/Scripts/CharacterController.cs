@@ -42,6 +42,10 @@ public class CharacterController : MonoBehaviour
 
     [Header("ParticleSystem")] 
     public ParticleSystem PS;
+    public ParticleSystem dust;
+
+    [Header("Audio")]
+    public AudioSource audioSource;
 
     [Header("Respawn Position")] 
     public Vector3 respawnPosition;
@@ -54,7 +58,7 @@ public class CharacterController : MonoBehaviour
 
         //Jumps when the assigned button is pressed
         if(Input.GetButtonDown("Jump")){
-           //Declaring the jump function
+            //Declaring the jump function
             jumpTimer = Time.time + jumpDelay;
 
         }
@@ -92,9 +96,12 @@ public class CharacterController : MonoBehaviour
         if(jumpTimer > Time.time && onGround){
            Jump();
            Debug.Log("Jump");
+
            ParticleSystem PS01 = Instantiate(PS, transform);
            PS01.Play();
-           
+           audioSource.Play();
+
+
         }
 
         animator.SetBool("IsGrounded", false);
@@ -151,11 +158,22 @@ public class CharacterController : MonoBehaviour
           }
         }
     
-    void Flip()
-    {
+    void Flip(){
         facingRight = !facingRight;
         character.rotation = Quaternion.Euler(0, facingRight ? 0 : 180, 0);
+
+        if (onGround){
+            CreateDust();
+        }
     }
+
+    void CreateDust(){
+        dust.Play();
+
+    }
+
+
+
     private void OnDrawGizmos(){
         Gizmos.color = Color.red;
         //Sets editor linetrace for ground collision; their collider offset should be adjusted in the inspector variable to be just inside of the CharacterController's boundary box on the X axis (not Y axis)
