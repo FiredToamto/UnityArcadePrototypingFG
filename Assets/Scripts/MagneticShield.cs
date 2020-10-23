@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class MagneticShield : MonoBehaviour
 {
-    private int _amountOfBullets = 0;
-
+    public SuckedUpBulletManager bulletManager;
     private void OnDisable()
     {
-
+        bulletManager.Shoot();
     }
     private void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject.CompareTag("Bullet"))
         {
-            _amountOfBullets++;
+            BulletMethods bulletM = coll.GetComponent<BulletMethods>();
+            bulletM.SuckedUp();
+            bulletManager._amountOfBullets++;
+
         }
     }
+  
 }

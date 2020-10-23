@@ -12,12 +12,13 @@ public class PushShield : MonoBehaviour
         {
             Vector3 bulletPos = coll.GetComponent<Transform>().position;
             BulletMethods bulletM = coll.GetComponent<BulletMethods>();
+            bulletM.BulletExplode();
             PushPlayerInBulletDirection(bulletPos);
         }
     }
 
-    private void PushPlayerInBulletDirection(Vector3 bulletDirection)
+    private void PushPlayerInBulletDirection(Vector3 pos)
     {
-        playerBody.AddForce((transform.position - bulletDirection).normalized * pushForce);
+        playerBody.AddForce((transform.position - pos).normalized * pushForce);
     }
 }
