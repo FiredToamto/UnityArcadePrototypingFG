@@ -23,6 +23,8 @@ public class LevelManager : MonoBehaviour
     public int maxHealth;
     public int healthCount;
 
+    public int coinCount;
+
     private bool _respawning;
     
     public int startingLives;
@@ -36,9 +38,7 @@ public class LevelManager : MonoBehaviour
 
     public GameObject gameOverScreen;
     
-    
-    // Start is called before the first frame update
-    void Start()
+   void Start()
     {
         thePlayer = FindObjectOfType<CharacterController>();
         healthCount = maxHealth;
@@ -46,7 +46,6 @@ public class LevelManager : MonoBehaviour
         livesText.text = "x" + currentLives;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (healthCount <= 0 && !_respawning)
@@ -99,6 +98,11 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Hurt!");
         healthCount -= damageToTake;
         UpdateHeartMeter();
+    }
+
+    public void AddCoins(int coinsToAdd)
+    {
+        coinCount += coinsToAdd;
     }
 
     public void UpdateHeartMeter()
