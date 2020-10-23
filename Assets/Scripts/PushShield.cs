@@ -5,6 +5,7 @@ using UnityEngine;
 public class PushShield : MonoBehaviour
 {
     public float pushForce = 10f;
+    public float pushedTime = 0.5f;
     public Rigidbody2D playerBody;
     private void OnTriggerEnter2D(Collider2D coll)
     {
@@ -19,6 +20,14 @@ public class PushShield : MonoBehaviour
 
     private void PushPlayerInBulletDirection(Vector3 pos)
     {
-        playerBody.AddForce((transform.position - pos).normalized * pushForce);
+        playerBody.velocity = (transform.position - pos).normalized * pushForce;
+        StartCoroutine(DisablePlayerVelocity(pushedTime));
+    }
+
+    private IEnumerator DisablePlayerVelocity(float intervall)
+    {
+        yield return new WaitForSeconds(intervall);
+        //playerBody.velocity = new Vector2(0f, 0f);
+
     }
 }
