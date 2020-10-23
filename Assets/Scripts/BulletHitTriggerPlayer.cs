@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class BulletHitTrigger : MonoBehaviour
+public class BulletHitTriggerPlayer : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D coll)
     {
@@ -13,10 +13,6 @@ public class BulletHitTrigger : MonoBehaviour
                 coll.gameObject.SetActive(false);
                 gameObject.SetActive(false);
             }
-        }
-        if (coll.gameObject.CompareTag("Player"))
-        {
-            GetComponent<BulletMethods>().BulletExplode();
         }
         if (coll.gameObject.CompareTag("Shield"))
         {

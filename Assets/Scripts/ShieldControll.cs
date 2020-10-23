@@ -7,7 +7,10 @@ public class ShieldControll : MonoBehaviour
     public GameObject shield;
     public KeyCode shieldButton;
 
-    private bool _state = false;
+    private void Awake()
+    {
+        shield.SetActive(false);
+    }
 
     private void Update()
     {
@@ -18,18 +21,16 @@ public class ShieldControll : MonoBehaviour
     {
         if (Input.GetKeyDown(shieldButton))
         {
-            _state = !_state;
-            ShieldToggle();
+            ShieldToggle(true);
         }
         if (Input.GetKeyUp(shieldButton))
         {
-            _state = !_state;
-            ShieldToggle();
+            ShieldToggle(false);
         }
     }
 
-    private void ShieldToggle()
+    private void ShieldToggle(bool state)
     {
-        shield.SetActive(_state);
+        shield.SetActive(state);
     }
 }

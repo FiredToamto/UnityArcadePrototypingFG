@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8732786878861124962}
   m_Layer: 0
   m_Name: ShootRadius
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +63,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2344813259219220637, guid: a1e4e8fae69802d43be8854a7f5cd157, type: 3}
   shootIntervall: 10
   bulletSpeed: 10
-  enemyType: 2
   sR: {fileID: 6995905058654067837}
 --- !u!1 &6995905058654067836
 GameObject:
@@ -77,7 +76,7 @@ GameObject:
   - component: {fileID: 6995905058654067837}
   - component: {fileID: 1928852636343062094}
   m_Layer: 0
-  m_Name: EnemyTurretGreen
+  m_Name: EnemyHoming
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,7 +138,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0, g: 1, b: 0.04823923, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

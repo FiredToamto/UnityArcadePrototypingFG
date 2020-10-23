@@ -7,9 +7,8 @@ public class EnemyAttackHoming : MonoBehaviour
     public GameObject bulletPrefab;
     public float shootIntervall = 10f;
     public float bulletSpeed = 10f;
-    public int enemyType = 1;
+    //public int enemyType = 1;
     public SpriteRenderer sR;
-
 
     private Transform _tr;
     private Transform playerPos;
@@ -49,8 +48,8 @@ public class EnemyAttackHoming : MonoBehaviour
         newBullet.GetComponent<Transform>().LookAt(playerPos);
         newBullet.GetComponent<Transform>().rotation = new Quaternion(newBullet.GetComponent<Transform>().rotation.x, newBullet.GetComponent<Transform>().rotation.y, newBullet.GetComponent<Transform>().rotation.z - 90f, 0);
         newBullet.GetComponent<SpriteRenderer>().color = sR.color;
-        newBullet.GetComponent<BulletMovement>().bulletType = enemyType;
-        newBullet.GetComponent<BulletMovement>().bulletOwner = _tr;
+        //newBullet.GetComponent<BulletMoveBackToOwner>().bulletType = enemyType;
+        newBullet.GetComponent<BulletMoveBackToOwner>().bulletOwner = _tr;
         newBullet.GetComponent<Rigidbody2D>().velocity = (playerPos.position - newBullet.transform.position).normalized * bulletSpeed;
     }
 }
