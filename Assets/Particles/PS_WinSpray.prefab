@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2893702589701436124}
   - component: {fileID: 2893702589701436127}
   m_Layer: 11
-  m_Name: Particle-BloodSpray
+  m_Name: PS_WinSpray
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,7 +168,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 32
+      scalar: 5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -220,26 +220,26 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 1
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.6415094, g: 0.021181926, b: 0.021181926, a: 1}
+      maxColor: {r: 0.9828669, g: 1, b: 0.042452812, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 0}
-        key3: {r: 0, g: 0, b: 0, a: 0}
-        key4: {r: 0, g: 0, b: 0, a: 0}
-        key5: {r: 0, g: 0, b: 0, a: 0}
-        key6: {r: 0, g: 0, b: 0, a: 0}
+        key0: {r: 1, g: 0.8955444, b: 0, a: 1}
+        key1: {r: 0.6037736, g: 0.3235464, b: 0.16233535, a: 1}
+        key2: {r: 1, g: 0.86054194, b: 0, a: 0}
+        key3: {r: 1, g: 1, b: 1, a: 0}
+        key4: {r: 1, g: 0.8807947, b: 0, a: 0}
+        key5: {r: 0.76665515, g: 0.827451, b: 0.07843135, a: 0}
+        key6: {r: 1, g: 0.43643507, b: 0.0141509175, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 65535
-        ctime2: 0
-        ctime3: 0
-        ctime4: 0
-        ctime5: 0
-        ctime6: 0
+        ctime1: 17155
+        ctime2: 30069
+        ctime3: 32382
+        ctime4: 33731
+        ctime5: 44333
+        ctime6: 65535
         ctime7: 0
         atime0: 0
         atime1: 65535
@@ -250,7 +250,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_NumColorKeys: 2
+        m_NumColorKeys: 7
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
