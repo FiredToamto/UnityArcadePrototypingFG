@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 2344813259219220633}
   - component: {fileID: 2344813259219220634}
   - component: {fileID: 187373490625892227}
-  - component: {fileID: 3677072139544622631}
+  - component: {fileID: 5453630044241436504}
+  - component: {fileID: 5202705744464473074}
+  - component: {fileID: 8325731169196828799}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -149,7 +151,33 @@ MonoBehaviour:
   bulletSpeed: 10
   bulletType: 1
   deflected: 0
---- !u!114 &3677072139544622631
+--- !u!114 &5453630044241436504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2344813259219220637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6b4463242185f488588b7914069c70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToGive: 0
+  damageSound: {fileID: 0}
+--- !u!114 &5202705744464473074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2344813259219220637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e16e9d06779ecb74bb21c2e0a4013b8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8325731169196828799
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
