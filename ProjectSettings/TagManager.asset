@@ -10,6 +10,7 @@ TagManager:
   - Bullet
   - Killbox
   - CheckPoint
+  - Shield
   layers:
   - Default
   - TransparentFX

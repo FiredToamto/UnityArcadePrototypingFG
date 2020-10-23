@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4066285337973418297}
   m_Layer: 0
   m_Name: Shield2
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 3376695841322604859}
   m_Layer: 0
   m_Name: Shield3
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -873,7 +873,7 @@ GameObject:
   - component: {fileID: 5628886246206702254}
   m_Layer: 0
   m_Name: Shield1
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -971,7 +971,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f6b18177f56bb428df14c722b9f31a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldType: 1
 --- !u!1 &9162152250574636160
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,5 +1014,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25910f54f6d4dfb478dcde644a0c40d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 2344813259219220637, guid: a1e4e8fae69802d43be8854a7f5cd157, type: 3}
+  bulletPrefab: {fileID: 2344813259219220637, guid: 06ec0bd1313626f4e8fe352de6ba08ec, type: 3}
   _amountOfBullets: 0

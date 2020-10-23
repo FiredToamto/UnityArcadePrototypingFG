@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 2344813259219220637, guid: a1e4e8fae69802d43be8854a7f5cd157, type: 3}
-  shootIntervall: 1
-  bulletSpeed: 5
-  bulletSize: {x: 2, y: 2, z: 2}
+  shootIntervall: 3
+  bulletSpeed: 2
+  bulletSize: {x: 6, y: 3, z: 1}
   sR: {fileID: 6995905058654067837}
