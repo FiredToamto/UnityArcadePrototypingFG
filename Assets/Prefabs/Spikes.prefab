@@ -256,5 +256,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a6b4463242185f488588b7914069c70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageToGive: 3
+  damageToGive: 6
   damageSound: {fileID: 4848802090329455792}

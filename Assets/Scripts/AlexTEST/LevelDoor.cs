@@ -50,7 +50,7 @@ public class LevelDoor : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            if (Input.GetButtonDown("Jump") && unlocked)
+            if (Input.GetButtonDown("Submit") && unlocked)
             {
                 SceneManager.LoadScene(levelToLoad);
                 
