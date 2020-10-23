@@ -24,7 +24,9 @@ public class LevelManager : MonoBehaviour
     public int healthCount;
 
     public int coinCount;
-
+    public Text coinText;
+    private int _coinBonusLifeCount;
+    public int bonusLifeThreshold;
     private bool _respawning;
     
     public int startingLives;
@@ -37,13 +39,21 @@ public class LevelManager : MonoBehaviour
     public AudioSource gameOverSound;
 
     public GameObject gameOverScreen;
+
+    private ResetOnRespawn[] objectsToReset;
+    
     
    void Start()
     {
         thePlayer = FindObjectOfType<CharacterController>();
+        
         healthCount = maxHealth;
         currentLives = startingLives;
+        
         livesText.text = "x" + currentLives;
+        coinText.text = "x" + coinCount;
+
+        objectsToReset = FindObjectsOfType<ResetOnRespawn>();
     }
 
     void Update()
@@ -54,6 +64,23 @@ public class LevelManager : MonoBehaviour
             respawnSound.Play();
             _respawning = true;
         }
+
+        if (_coinBonusLifeCount >= bonusLifeThreshold)
+        {
+            currentLives += 1;
+            livesText.text = "x" + currentLives;
+            _coinBonusLifeCount = -bonusLifeThreshold;
+            
+            _resetCoinCounter();
+        }
+        
+    }
+
+    public void _resetCoinCounter()
+    {
+        coinCount = 0;
+        coinText.text = "x" + coinCount;
+        _coinBonusLifeCount = 0;
     }
 
     public void Respawn()
@@ -87,6 +114,15 @@ public class LevelManager : MonoBehaviour
         _respawning = false;
         UpdateHeartMeter();
 
+        coinCount = 0;
+        coinText.text = "x" + coinCount;
+        _coinBonusLifeCount = 0;
+
+        for (int i = 0; i < objectsToReset.Length; i++)
+        {
+            objectsToReset[i].gameObject.SetActive(true);  
+            objectsToReset[i].ResetObject();
+        }
         
         thePlayer.transform.position = thePlayer.respawnPosition;
         thePlayer.gameObject.SetActive(true);
@@ -103,6 +139,8 @@ public class LevelManager : MonoBehaviour
     public void AddCoins(int coinsToAdd)
     {
         coinCount += coinsToAdd;
+        _coinBonusLifeCount += coinsToAdd;
+        coinText.text = "x" + coinCount;
     }
 
     public void UpdateHeartMeter()
