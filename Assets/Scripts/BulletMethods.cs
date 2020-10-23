@@ -13,11 +13,11 @@ public class BulletMethods : MonoBehaviour
     }
     public void Deflected()
     {
-        //deflect bullet back to enemy
+        GetComponent<BulletMoveBackToOwner>().deflected = true;
     }
     public void DisableVelocity()
     {
-        GetComponent<Rigidbody2D>().velocity.Set(0f, 0f);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0f ,0f);
     }
     public void SuckedUp()
     {
