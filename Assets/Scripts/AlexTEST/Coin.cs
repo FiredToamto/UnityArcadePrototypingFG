@@ -30,8 +30,9 @@ public class Coin : MonoBehaviour
             Debug.Log("Trigger");
             pickUpSound.Play();
             _theLevelManager.AddCoins(coinValue);
-            Destroy(gameObject);
-
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
+            
         }
     }
 }

@@ -515,11 +515,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstLevel: S_Level_01
-  LevelSelect: 
+  LevelSelect: S_LevelSelect
   levelNames:
   - S_Level_01
-  - S_Alex_TD_Test
-  - S_Level_03
+  - S_Level_02
+  - S_Credits
   startingLives: 0
 --- !u!1 &1195641290
 GameObject:
