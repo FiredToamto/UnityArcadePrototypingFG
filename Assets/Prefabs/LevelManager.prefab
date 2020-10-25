@@ -342,6 +342,12 @@ MonoBehaviour:
   heartEmpty: {fileID: 21300000, guid: cbb6e4ddd7f7b5846914b590933c9ad3, type: 3}
   maxHealth: 6
   healthCount: 0
+  coinCount: 0
+  coinText: {fileID: 0}
+  bonusLifeThreshold: 3
+  startingLives: 0
+  currentLives: 0
+  livesText: {fileID: 0}
   dieSound: {fileID: 3873830961411248721}
   respawnSound: {fileID: 696888638595433816}
   gameOverSound: {fileID: 315940596943804450}

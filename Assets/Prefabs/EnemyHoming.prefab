@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8732786878861124962}
   m_Layer: 0
   m_Name: ShootRadius
-  m_TagString: Enemy
+  m_TagString: EnemyHomingRadius
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 2344813259219220637, guid: a1e4e8fae69802d43be8854a7f5cd157, type: 3}
-  shootIntervall: 10
+  shootIntervall: 2
   bulletSpeed: 10
   sR: {fileID: 6995905058654067837}
 --- !u!1 &6995905058654067836
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 6995905058654067838}
   - component: {fileID: 6995905058654067837}
   - component: {fileID: 1928852636343062094}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyHoming
   m_TagString: Enemy
   m_Icon: {fileID: 0}

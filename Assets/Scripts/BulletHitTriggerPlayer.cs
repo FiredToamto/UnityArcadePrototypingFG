@@ -8,11 +8,9 @@ public class BulletHitTriggerPlayer : MonoBehaviour
     {
         if (coll.gameObject.CompareTag("Enemy"))
         {
-            if (GetComponent<BulletMoveBackToOwner>().deflected)
-            {
-                coll.gameObject.SetActive(false);
-                gameObject.SetActive(false);
-            }
+            coll.gameObject.SetActive(false);
+            gameObject.SetActive(false);
+            
         }
         if (coll.gameObject.CompareTag("Shield"))
         {
