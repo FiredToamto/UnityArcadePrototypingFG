@@ -11,6 +11,7 @@ TagManager:
   - Killbox
   - CheckPoint
   - Shield
+  - EnemyHomingRadius
   layers:
   - Default
   - TransparentFX
